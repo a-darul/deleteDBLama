@@ -13,8 +13,8 @@ const TrxWallet = mongoose.model("trxWallet", Schema, "transaksiWallet");
 
 const start = async () => {
   try {
-    await mongoose.connect("mongodb://localhost:27017/anekapay_prod", DBconfig),
-      console.log("DB Connected");
+    await mongoose.connect("mongodb://localhost:27017/anekapay_prod", DBconfig);
+    console.log("DB Connected");
 
     console.log("Hapus trx");
     const trx = await Trx.deleteMany({ "trx.epoc": { $lte: 1589037099 } });
